@@ -18,21 +18,23 @@ const Issues = () => {
   return (
     <div>
         <h1 className="text-violet-600 font-bold text-center text-2xl">Github Issues JS</h1>
-        <div className='flex'>
+        <div className='flex m-10 justify-center'>
             <button 
             id="load_prev" 
-            className='px-3 text-center max-py-0.5 bg-black text-white'
+            className='font-bold px-3 text-center max-py-0.5 bg-black text-white box-border rounded-2xl'
             onClick={() => setNumber(prev =>(prev > 1) ? prev - 1 : prev)}
             >prev</button>
-            <h3 className='p-2'>Page Number {number}</h3>
+            <h3 className='p-2 font-mono font-extrabold font-2xl text-green-800 text-xl'>
+                Page Number <span className=' text-red-700'>{number}</span>
+            </h3>
             <button 
-            className='p-2' 
+            className='font-bold px-3 text-center max-py-0.5 bg-black text-white box-border rounded-2xl' 
             id="load_next"
             onClick={() => setNumber(prev => prev + 1)}
             >next</button>
         </div>
-        <div>
-            <ol>
+        <div className='flex justify-center'>
+            <ol className='ml-20'>
                 {
                     issueList.map((issue) => (
                         <li key={issue.id}>{`ID: ${issue.id} || Title: ${issue.title}`}</li>
